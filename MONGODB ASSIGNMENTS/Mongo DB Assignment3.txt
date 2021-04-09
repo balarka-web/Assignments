@@ -1,0 +1,63 @@
+1.db.addresses.find()
+
+2.db.address.aggregate([{ $project :{ name : 1,restaurant_id :1 ,borough :1 ,cuisine:1}}])
+
+3.db.addresses.aggregate( [ { $project : { name : 1 , restaurant_id : 1 , borough : 1 , cuisine : 1 , _id:0}}])
+
+4.db.addresses.aggregate( [ { $project : { name : 1 , restaurant_id : 1 , borough : 1, _id:0 } } ] )
+
+5. db.addresses.find({borough:"Bronx"}).limit(5)
+
+6.db.addresses.find({borough:"Bronx"})
+
+7. db.addresses.find({borough:"Bronx"}).skip(5).limit(5).pretty()
+
+8.db.addresses.find({"addresses.score":{$gt:90}}).pretty()
+
+9.db.addresses.find({"grades.score":{$gt:80,$lt:100}})
+
+10.db.addresses.find({"addresses.coord":{$lt:-95.754168}})
+
+11.db.addresses.find({$and:[{"cuisine" : {$ne :"American "}},{"grades.score" : {$gt : 70}},{"address.coord" : {$lt : -65.754168}}]})
+
+12.db.addresses.find({$and:[{"cuisine" : {$ne :"American "}},{"grades.score" : {$gt : 70}},{"address.coord" : {$lt : -65.754168}}]})
+
+13.db.addresses.find({$and:[{"cuisine" : {$ne :"American "}},{"grades.grade" :"A"},{"borough" : {$ne :"Brooklyn"}}]}).sort({cuisine:-1})
+
+14.db.addresses.find( { name: { $regex: /^Wil/i } } ).pretty()
+
+15.db.addresses.find({ "name": { "$regex": "ces$" } }).pretty()
+
+16.db.addresses.find({ "name": {$regex: /Reg/i } }).pretty()
+
+17.db.addresses.aggregate([ {$match: {borough:"Bronx", cuisine: {$in: ["American","Chinese"] }}}]).pretty()
+
+18.db.addresses.find({restaurant id:1,name:1,borough:{$in: ["Staten Island","Queens","Bronxor","Brooklyn"] } }).pretty()
+
+19.db.addresses.find({restaurant id:1,name:1,borough:{$nin: ["Staten Island","Queens","Bronxor","Brooklyn"] } }).pretty()
+
+20.db.addresses.find({"grades.score":{$lt:10}}).pretty()
+
+21.db.addresses.find( { name: { $regex: /^Wil/i } ,cuisine: {$nin: ["American","Chinese"]}}).pretty()
+
+22.db.addresses.find( {restaurants id:1,name:1,"grades.grade":"A","grades.score":11,"grades.date":"ISODate:"2014-08-11T00:00:00Z" }}).pretty()
+
+23. db.addressses.find({‘grades.1.date’:ISODate(“2014-08-11T00:00:00Z”),’grades.1.grade’:’A’,’grades.score’:11},{‘restaurant_id’:1,’borough’:1}).pretty()
+
+24.db.addresses.find({‘address.coord.1’:{$gt:42,$lt:52}},{‘restaurant_id’:1,’borough’:1,’cuisine’:1}).pretty()
+
+25.db.addresses.find().sort({"name":1}).pretty()
+
+26.db.addresses.find().sort({"name":-1}).pretty()
+27.db.addresses.find().sort({"cuisine":1,"borough":-1}).pretty()
+28.db.addresses.find({ ''address.street" : { '$exists' : true , "$not":null}}).pretty();
+
+29.db.addresses.find( { "address.coord": { $type : "double" } } ).pretty()
+
+30.db.addresses.find({restaurant id:1,name:1,grades:1,"grades.score":1})
+
+31.db.addresses.find({borough:1,"address.coord":1,name:{$regex:/mon/i}}).pretty()
+
+32.db.addresses.find({borough:1,"address.coord":1,name:{$regex:/^Mad/}}).pretty()
+
+

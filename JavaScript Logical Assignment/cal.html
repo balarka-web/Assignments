@@ -1,0 +1,112 @@
+<html>
+    <head>
+   <!-- <script src="c.js" type="javascript">-->
+       <script>
+           function cal(){
+           var a=parseInt(prompt("enter what operation you want\n 1.Add \n 2.Subtract \n 3.Mult \n 4.Divide \n 5.Exponent \n 6.Mean \n 7.Quit"));
+        /*if(a>7)
+        {
+            alert("Error");
+        } */  
+        switch(a){
+
+            case 1:
+            var b=parseInt(prompt("enter 1 number"));
+            var c=parseInt(prompt("enter 2 number"));
+            var answer = parseFloat(b) + parseFloat(c);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+            break;
+            
+            case 2:
+            var b=parseInt(prompt("enter 1 number"));
+            var c=parseInt(prompt("enter 2 number"));
+            var answer = parseFloat(b) - parseFloat(c);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+            break;
+            case 3:
+            var b=parseInt(prompt("enter 1 number"));
+            var c=parseInt(prompt("enter 2 number"));
+            var answer = parseFloat(b) * parseFloat(c);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+            break;
+            case 4:
+            var b=parseInt(prompt("enter 1 number"));
+            var c=parseInt(prompt("enter 2 number"));
+            var answer = parseFloat(b) / parseFloat(c);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+            break;
+            case 5:
+            var base = parseInt(prompt("enter base"));
+            var expo=parseInt(prompt("enter expo"))
+            var answer=Math.pow(base,expo);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+            break;
+            case 6:
+            var arr = [];
+            var i=0; 
+                                      // define our array
+            /*while(i!=0)*/ 
+            
+            for(i=0;i<5;i++)
+            {              // loop 10 times
+                    arr.push(prompt('Enter numbers ' + (i+1))); // push the value into the array
+                }
+                var sum=0;
+                for(i=0;i<arr.length;i++)
+                {
+                    sum=sum+arr[i];
+                }
+                var answer=sum/arr.length;
+                var ans = document.getElementById('t1');
+            ans.value = answer;
+                break;
+            default:
+                alert("enter a number");
+            }
+        }
+/*var a=parseInt(prompt("enter what operation you want\n 1.Add \n 2.Subtract \n 3.Mult \n 4.Divide \n 5.Exponent \n 6.Mean \n 7.Quit"));*/
+
+        /*else if(a==5)
+        {
+            }
+            
+            
+           else if(a==2)
+        {
+            }
+           else if(a==3)
+        {
+            }
+          else if(a==4)
+        {
+            }
+        }
+            /*else if(a==6)
+        {
+            var inp = parseInt(prompt("numbers"));
+            for(var i=0;i<inp;i++)
+            {
+            var inp = parseInt(prompt("numbers"));
+            var expo=parseInt(prompt("enter base"))
+            var answer=Math.pow(base,expo);
+            var ans = document.getElementById('t1');
+            ans.value = answer;
+             }
+            }*/
+
+    </script>
+</head>
+    <body>
+    <form>
+Result Box : <input type="text" name="tx1" id="t1">
+<input type="button" name="ans" value="runcalulator" id="run" onclick="cal()">
+
+</form>
+</script>
+</body>
+</html>
