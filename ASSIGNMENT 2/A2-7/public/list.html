@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grocery">
+        <h1>Grocery Shopping List</h1>
+        <p style="text-align: left; margin-left: 140px;">Select items:</p>
+        <form action="/items" method="POST">
+            <ul class="checkboxbtn">
+                <li>
+                    <input type="checkbox" id="potatos" name="Input" value="potatos">
+                    <label for="potatos">Potatos</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="orange" name="Input" value="orange">
+                    <label for="orange">Orange</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="carrot" name="Input" value="Carrot">
+                    <label for="carrot">Carrot</label>
+                </li>
+            </ul>
+            <input type="submit" value="Submit">
+            <a href="/">Back</a href="/">
+        </form>
+    </div>
+</body>
+</html>
